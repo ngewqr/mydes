@@ -1,162 +1,316 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>MYDES STUDIO</title>
-  <meta name="description" content="MYDES Branding Studio">
+  <meta name="description" content="MYDES — a Melbourne visual and branding studio.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="cache-control" content="no-cache">
-      
+
   <!--Redirect if JS is disabled-->
 <noscript>
    <meta http-equiv="refresh" content="0; url=/noscript" />
 </noscript>
-      
-<!-- Stylesheet -->      
+
+<!-- Stylesheet -->
 <link rel="preload" as="font" href="/fonts/Custom.TTF" type="font/TTF" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/main.css" type="text/css">
 <script src="https://kit.fontawesome.com/e275c1821d.js" crossorigin="anonymous"></script>
-      
+
 <style>
-      @font-face {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Customfont;
-        src: url("/fonts/Custom.TTF");
-      }
-     * {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Customfont;
-        -webkit-font-smoothing: antialiased;
-        margin: 0; 
-        }
-      html,
-      body {
-        height: 100%;
-        background-color: #EA602A;
-	overflow: hidden;
-      }
-      p {
-        font-weight: 500;
-        color: #fbfbfb;
-      }
-      .wrapper {
-        min-height: 100%;
-        height: auto !important;
-        margin: 0 auto -235px; /* the bottom margin is the negative value of the footer's height */
-        text-align: center;
-        padding: 0px 30px;
-      }
-      .footer, .push {
-        height: 235px; /* .push must be the same height as .footer */
-      }
-      .title {
-        font-size: 600%;
-        font-weight: 400;
-        color: #515154;
-        line-height: 100px;
-        margin-bottom: 15px;
-        padding-top: 80px;
-        letter-spacing: -1px;
-      }   
-      .engtext {
-        font-size: 100%;
-        font-weight: 500;
-        color: #E8E8ED;
-        line-height: 1.7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        -webkit-user-select: none;
-        -webkit-touch-callout: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      .chitext {
-        font-size: 140%;
-        font-weight: 400;
-        color: #515154;
-        line-height: 30px;
-        margin-bottom: 30px;
-      }
-      .txt-rotate {
-        color: #2997FE;
-        -webkit-user-select: none;
-        -webkit-touch-callout: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      button, 
-      [type=button], 
-      [type=reset], 
-      [type=submit] {
-      font-size: 12px;
-      border-radius: 8px;
-      white-space: nowrap;
-      margin-top: 30px;
-      max-height: 100px;
-      padding: 8px 16px;
-      background: initial;
-      border-color: #a1a1a1;
-      color: #a1a1a1;
-      line-height: 1.42859;
-      letter-spacing:-0.02em;
-      transition: background-color .4s ease-in-out,color .4s ease-in-out;
-      display: inline-block;
-      }
-      button:hover {
-      border-color: #E8E8ED;
-      background: #E8E8ED;
-      color: #161617;
-      }
-      button:focus {
-      border-color: #E8E8ED;
-      background: #E8E8ED;
-      color: #161617;
-      }
-      @media (max-width: 767px) {
-        .title {
-          margin-top: 20px;
-        }
-        .footer, .push {
-          height: 130px; /* .push must be the same height as .footer */
-        }
-        .wrapper {
-          margin: 0 auto -130px; /* the bottom margin is the negative value of the footer's height */
-        }
-        .engtext {
-          line-height: 1.7;
-          margin-bottom: 20px;
-          font-size: 100%;
-        }
-        .chitext {
-          margin-bottom: 30px;
-        }
-      }
-    </style>
+  @font-face {
+    font-family: Customfont;
+    src: url("/fonts/Custom.TTF");
+  }
+
+  :root {
+    --paper: #F6F3ED;
+    --ink: #21201C;
+    --ink-soft: #6E6A61;
+    --orange: #EA602A;
+    --line: rgba(33, 32, 28, 0.14);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html, body {
+    height: 100%;
+    background-color: var(--paper);
+    font-family: Customfont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 34px clamp(20px, 5vw, 64px);
+    overflow-x: hidden;
+  }
+
+  /* ---------- header ---------- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+  }
+
+  .mark {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .locus {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .locus .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+
+  /* ---------- hero ---------- */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: clamp(56px, 9vw, 128px);
+    line-height: 0.92;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  h1 span {
+    display: block;
+  }
+
+  .tagline {
+    margin-top: 28px;
+    max-width: 34ch;
+    font-size: clamp(15px, 1.6vw, 18px);
+    line-height: 1.7;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+
+  .cta {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    width: fit-content;
+    transition: color .3s ease, border-color .3s ease;
+  }
+
+  .cta:hover {
+    color: var(--orange);
+    border-color: var(--orange);
+  }
+
+  .cta svg {
+    width: 14px;
+    height: 14px;
+    transition: transform .3s ease;
+  }
+
+  .cta:hover svg {
+    transform: translate(3px, -3px);
+  }
+
+  /* ---------- mascot ---------- */
+  .mascot-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mascot-wrap svg {
+    width: min(320px, 80%);
+    height: auto;
+  }
+
+  .orbit-label {
+    position: absolute;
+    top: 6%;
+    right: 6%;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    writing-mode: vertical-rl;
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  footer a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  footer a:hover {
+    color: var(--orange);
+    border-color: var(--orange);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 26px;
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .tagline {
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mascot-wrap {
+      order: -1;
+    }
+
+    .mascot-wrap svg {
+      width: 200px;
+    }
+
+    .orbit-label {
+      display: none;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 14px;
+      text-align: center;
+    }
+  }
+</style>
 </head>
 <body>
-<div class="wrapper">
-      <div class="title"></div>
-      <div class="engtext"><p>MYDES STUDIO
-	      <br>
-	    <!-- <a rel="nofollow" href="mailto:work@mydes.studio" style="text-decoration:none">
-                  <button style="min-height: 0;">CONTACT</button></a> -->
-	      </p></div>
-      <div class="chitext"></div>
-      <div class="push"></div>
+
+  <header>
+    <div class="mark">MYDES</div>
+    <div class="locus"><span class="dot"></span>Melbourne, Australia</div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Visual &amp; Branding Studio</div>
+        <h1><span>Quiet</span><span>ideas,</span><span>made&nbsp;visible.</span></h1>
+        <p class="tagline">MYDES is a small studio shaping brand identities with restraint — considered typography, honest colour, and space left to breathe.</p>
+        <a class="cta" href="mailto:work@mydes.studio">
+          Start a project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
       </div>
-    
-      <div class="footer" style="text-align:center">
-      <p id="screen-log" style="font-size:10px;margin-top:30px"></p>
+
+      <div class="mascot-wrap">
+        <span class="orbit-label">est. studio</span>
+        <svg viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- ground line -->
+          <line x1="30" y1="278" x2="270" y2="278" stroke="#21201C" stroke-width="1.5" opacity="0.5"/>
+          <!-- tuft -->
+          <path d="M150 40C158 22 178 16 192 24C182 30 176 40 176 52" stroke="#21201C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <!-- body -->
+          <circle cx="150" cy="170" r="98" fill="#EA602A" stroke="#21201C" stroke-width="2.5"/>
+          <!-- blush -->
+          <circle cx="102" cy="188" r="12" fill="#F6B48A" opacity="0.7"/>
+          <circle cx="198" cy="188" r="12" fill="#F6B48A" opacity="0.7"/>
+          <!-- eyes -->
+          <circle cx="122" cy="164" r="8" fill="#F6F3ED"/>
+          <circle cx="124" cy="166" r="3.4" fill="#21201C"/>
+          <circle cx="178" cy="164" r="8" fill="#F6F3ED"/>
+          <circle cx="180" cy="166" r="3.4" fill="#21201C"/>
+          <!-- smile -->
+          <path d="M128 196C138 208 162 208 172 196" stroke="#21201C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <!-- left arm (down) -->
+          <path d="M64 190C46 200 34 216 32 236" stroke="#21201C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <circle cx="30" cy="242" r="10" fill="#F6F3ED" stroke="#21201C" stroke-width="2.5"/>
+          <!-- right arm (waving up) -->
+          <path d="M236 186C252 172 262 152 262 132" stroke="#21201C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <circle cx="264" cy="124" r="10" fill="#F6F3ED" stroke="#21201C" stroke-width="2.5"/>
+          <!-- feet -->
+          <path d="M118 262C118 274 108 280 96 280" stroke="#21201C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <circle cx="92" cy="282" r="11" fill="#EA602A" stroke="#21201C" stroke-width="2.5"/>
+          <path d="M182 262C182 274 192 280 204 280" stroke="#21201C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <circle cx="208" cy="282" r="11" fill="#EA602A" stroke="#21201C" stroke-width="2.5"/>
+        </svg>
       </div>
- 
-     
-      
+    </div>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 MYDES Studio</span>
+    <div class="footer-links">
+      <a href="mailto:work@mydes.studio">Email</a>
+      <a href="https://instagram.com" rel="nofollow">Instagram</a>
+    </div>
+  </footer>
+
 </body>
 </html>
